@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-item>
+        <ion-label floating>Report</ion-label>
+        <ion-textarea [(ngModel)]="config.report" disabled readonly>
+        </ion-textarea>
+      </ion-item>
+    </ion-row>
+    <ion-row align-items-center>
+      <ion-col align-self-center size-md="12" size-lg="12" size-xs="2">
+        <ion-item>
+          <ion-label color="primary" floating>X</ion-label>
+          <ion-input type="tel" [(ngModel)]="config.x"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col align-self-center size-md="12" size-lg="12" size-xs="2">
+        <ion-item>
+          <ion-label color="primary" floating>Y</ion-label>
+          <ion-input type="tel" [(ngModel)]="config.y"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col align-self-center size-md="12" size-lg="12" size-xs="8">
+        <ion-item>
+          <ion-label floating>F</ion-label>
+          <ion-select [(ngModel)]="config.f" multiple="false">
+            <ion-option value="North">North</ion-option>
+            <ion-option value="South">South</ion-option>
+            <ion-option value="East">East</ion-option>
+            <ion-option value="West">West</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row justify-content-center>
+      <ion-col size="3">
+        <button ion-button icon-start (click)="placeRobot()">
+          Place
+        </button>
+      </ion-col>
+      <ion-col size="3" (click)="rotateRobot('left')">
+        <button ion-button icon-start>
+          Left
+        </button>
+      </ion-col>
+      <ion-col size="3">
+        <button ion-button icon-end (click)="moveToNextPlace()">
+          Move
+        </button>
+      </ion-col>
+      <ion-col size="3">
+        <button ion-button icon-end (click)="rotateRobot('right')">
+          Right
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

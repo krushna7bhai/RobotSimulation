@@ -1,0 +1,39 @@
+page-home {
+  $white-color: #fff;
+  $height100: 100%;
+
+  textarea {
+    height: 150px;
+  }
+
+  ion-grid {
+    width: 70% !important;
+    background: #dfdfdf;
+    margin-top: 30px;
+  }
+
+  ion-row {
+    height: $height100;
+  }
+
+  .fixed-content {
+    background-color: darkgrey;
+  }
+
+  ion-button {
+    font-weight: 300;
+  }
+
+  @media (min-width: 240px) and (max-width: 768px) {
+    ion-grid {
+      background: $white-color;
+      width: 100% !important;
+      height: $height100;
+      margin-top: 0px;
+    }
+
+    ion-col {
+      border: none;
+    }
+  }
+}
